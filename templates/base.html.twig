@@ -28,6 +28,12 @@
             <li class="nav-item">
               <a class="nav-link {{ app.request.attributes.get('_route') == 'app_base' ? 'active' }}" href="{{ path('app_base') }}">Accueil</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link {{ app.request.attributes.get('_route') == 'app_ajout_reparation' ? 'active' }}" href="{{ path('app_ajout_reparation') }}">Nouvelle réparation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ app.request.attributes.get('_route') == 'app_liste_reparations' ? 'active' }}" href="{{ path('app_liste_reparations') }}">Réparations</a>
+            </li>
         </ul>
         </div>
     </div>

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }}Nouvelle réparation{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        #reparation > div { margin-bottom: 1rem; }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h1 class="h3 mb-0"><i class="bi bi-wrench"></i> Nouvelle demande de réparation</h1>
+                </div>
+                <div class="card-body">
+                    {{ form(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
