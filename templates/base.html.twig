@@ -35,6 +35,23 @@
               <a class="nav-link {{ app.request.attributes.get('_route') == 'app_liste_reparations' ? 'active' }}" href="{{ path('app_liste_reparations') }}">Réparations</a>
             </li>
         </ul>
+        <ul class="navbar-nav">
+            {% if app.user %}
+                <li class="nav-item">
+                    <span class="navbar-text me-3"><i class="bi bi-person-circle"></i> {{ app.user.userIdentifier }}</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link {{ app.request.attributes.get('_route') == 'app_login' ? 'active' }}" href="{{ path('app_login') }}">Connexion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ app.request.attributes.get('_route') == 'app_register' ? 'active' }}" href="{{ path('app_register') }}">Inscription</a>
+                </li>
+            {% endif %}
+        </ul>
         </div>
     </div>
     </nav>
